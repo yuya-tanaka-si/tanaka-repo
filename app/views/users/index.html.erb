@@ -30,6 +30,7 @@
 =end%>
 
 <p><%= @error_msg%></p>
+<p>名前を入力してください</p>
 
 <%= form_with(url: users_search_path(), local: true) do |f| %>
   <%= f.text_field(:name) %>

@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+  # 検索窓
   def index
-    # @users = User.all
   end
 
   # GET /users/1
@@ -16,21 +16,22 @@ class UsersController < ApplicationController
   def show
   end
 
-  # '; delele from users; --
+  # '); delete from users; --
+  # name = ' or '1'='1
 
   def search
-    name = params[:name] # name = ' or '1'='1
+    name = params[:name] 
 
     # Bad
     # user = User.where("name = '#{name}'")
     # user = User.find_by("name = '#{name}'") 
   
  
-    SQLite3::Database.new( "/Users/admin/sql_injection/sql_injection_app/db/development.sqlite3" ) do |db|
-      db.execute( "select * from users; delete from users;") do |row|
-        p row
-      end
-    end
+    # SQLite3::Database.new( "/Users/admin/sql_injection/sql_injection_app/db/development.sqlite3" ) do |db|
+    #   db.execute( "select * from users; delete from users;") do |row|
+    #     p row
+    #   end
+    # end
 
     # sql = "SELECT * FROM users WHERE name = " + name
     # p name
@@ -43,12 +44,11 @@ class UsersController < ApplicationController
     # user = User.find_by_sql(query)
 
     # Good
-    # user = User.where(name: name)
+    user = User.where(name: name)
     # user = User.find_by(name: name)
 
     if user.present?
-      # redirect_to user
-      render :index
+      redirect_to user.first
     else
       @error_msg = "ユーザーは見つかりませんでした。"
       render :index

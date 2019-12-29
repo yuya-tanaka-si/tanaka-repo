@@ -7437,3 +7437,797 @@ puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
 puma (4.3.1) lib/puma/server.rb:472:in `process_client'
 puma (4.3.1) lib/puma/server.rb:328:in `block in run'
 puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/guest" for ::1 at 2019-12-26 14:06:43 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/guest"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2019-12-26 14:06:45 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1150)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 8478)
+
+
+Started GET "/users/" for ::1 at 2019-12-26 14:06:50 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 734)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4620)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:08:06 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"yhNUJREkq8u3Gg5ZUU/O5lzNP1+tATD/rvKEYj1O+LGuRTS5hXum4y+mkZQmqoOe27wNU6tFX8ShePI8rauJFw==", "name"=>"' or '1'='1", "commit"=>"送信"}
+Completed 500 Internal Server Error in 298ms (ActiveRecord: 0.0ms | Allocations: 98473)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00007fe98a241f28>
+Did you mean?  super):
+  
+app/controllers/users_controller.rb:49:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:11:06 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"yhNUJREkq8u3Gg5ZUU/O5lzNP1+tATD/rvKEYj1O+LGuRTS5hXum4y+mkZQmqoOe27wNU6tFX8ShePI8rauJFw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:49:in `search'
+Redirected to 
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.6ms | Allocations: 7455)
+
+
+  
+NoMethodError (undefined method `to_model' for #<User::ActiveRecord_Relation:0x00007fe987908d50>
+Did you mean?  to_xml):
+  
+app/controllers/users_controller.rb:50:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:11:46 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"yhNUJREkq8u3Gg5ZUU/O5lzNP1+tATD/rvKEYj1O+LGuRTS5hXum4y+mkZQmqoOe27wNU6tFX8ShePI8rauJFw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to 
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.3ms | Allocations: 7807)
+
+
+  
+NoMethodError (undefined method `to_model' for #<User::ActiveRecord_Relation:0x00007fe98641ee80>
+Did you mean?  to_xml):
+  
+app/controllers/users_controller.rb:51:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:12:06 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"yhNUJREkq8u3Gg5ZUU/O5lzNP1+tATD/rvKEYj1O+LGuRTS5hXum4y+mkZQmqoOe27wNU6tFX8ShePI8rauJFw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 20ms (ActiveRecord: 1.7ms | Allocations: 6133)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 14:12:06 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 5485)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:12:08 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 732)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 4607)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:12:26 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"JpKakgooDfrGIusGRdI6tc749TLK9hNdJusDpABAJ9CrVZkbuycbjU/Awm2WG1bPwY4wjSRO9tVh15hJGCIpUg==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 1965)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 14:12:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 4571)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:12:28 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 4607)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:12:57 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"X38CEJ8Ww64VUPiZLhBpTdWXC85hZOhrv8wW68m9ri/SuAGZLhnV2Zyy0fL92QU32uHOcY/cDeP48I0G0d+grQ==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms | Allocations: 1980)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 14:12:57 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.2ms | Allocations: 4585)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:12:59 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 4606)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:14:06 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"XuvGYvqTrRwTyyVFXqnue4Aue4Wn8JAoC3id4IinEBDTLMXrS5y7a5opDC6NYIIBj1i+OklIdaBMRAYNkMUekg==", "name"=>"b", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'b') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'b')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1758)
+
+
+Started GET "/users/2" for ::1 at 2019-12-26 14:14:06 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms | Allocations: 4583)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:14:08 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 4608)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:14:09 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"jlVFemSAbS0bKx+mMkK8ANHp/qGmkEJibkAd7rrRErMDkkbz1Y97WpLJNs3hi9B63p87Hkgop+opfIYDorMcMQ==", "name"=>"c", "commit"=>"送信"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'c') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'c')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms | Allocations: 1760)
+
+
+Started GET "/users/3" for ::1 at 2019-12-26 14:14:09 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 4571)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:14:11 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 4608)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:14:17 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"Tmlpgi+hHDYZb8bqSsIeVsMAMXb3pJXX6HaSsQPpX83DrmoLnq4KQZCN74GZC3IszHb0yRkccF+vSglcG4tRTw==", "name"=>"  '; delele from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '  '; delele from users; --') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms | Allocations: 1786)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ";": syntax error):
+  
+app/controllers/users_controller.rb:26:in `p'
+app/controllers/users_controller.rb:26:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:14:25 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"lt+nUw8tS0Vu13BnZDFdannu4ZscJRMXFnThWPYHAYLyicfPm3JGbfZr76oT1BAS/p/TlxphfCwZ/pcGZuJwJA==", "name"=>"  '; delete from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '  '; delete from users; --') LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:26:in `p'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms | Allocations: 1764)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ";": syntax error):
+  
+app/controllers/users_controller.rb:26:in `p'
+app/controllers/users_controller.rb:26:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:16:07 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"lt+nUw8tS0Vu13BnZDFdannu4ZscJRMXFnThWPYHAYLyicfPm3JGbfZr76oT1BAS/p/TlxphfCwZ/pcGZuJwJA==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ?[0m  [["name", "' or '1'='1"]]
+  ↳ app/controllers/users_controller.rb:49:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.8ms | Allocations: 6223)
+
+
+Started GET "/users/search" for ::1 at 2019-12-26 14:30:45 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:111:in `set_user'
+Completed 404 Not Found in 20ms (ActiveRecord: 1.1ms | Allocations: 1453)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=search):
+  
+app/controllers/users_controller.rb:111:in `set_user'
+Started GET "/users" for ::1 at 2019-12-26 14:30:53 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 4607)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:32:17 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 5900)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:32:21 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"v+3rH3qM3YWgBpH6YVS6ychEj+azH/0p1VIdos1NARnbu4uD7tPQrTi6DjcWsfexTzW96rVbkhLa2Gv8Xahwvw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ?[0m  [["name", "a"]]
+  ↳ app/controllers/users_controller.rb:49:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 13ms (ActiveRecord: 0.7ms | Allocations: 4411)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 14:32:21 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:111:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 4924)
+
+
+Started GET "/users" for ::1 at 2019-12-26 14:32:28 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 4616)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:35:15 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"8N6RhgDMa9AN4qlCI/hZEk47w3PMGIXc3mbHLesdXoF9GZIPscN9p4QAgCnwMTVoQU0GzCKgYFSZWlzA839QAw==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ?[0m  [["name", "' or '1'='1"]]
+  ↳ app/controllers/users_controller.rb:49:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 5235)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:35:59 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"Bz2dGJPTnS4Sjy+lLupDyevS+7hWuN6cecMmzm353kxja/2EB4yQBoozsGhZDw6xbKPJtFD8sad2SVCQ/Ryv6g==", "name"=>"'; delete from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = ''; delete from users; --')[0m
+  ↳ app/controllers/users_controller.rb:49:in `search'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 2056)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ";": syntax error):
+  
+app/controllers/users_controller.rb:49:in `search'
+Started GET "/users/search" for ::1 at 2019-12-26 14:36:10 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:111:in `set_user'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.6ms | Allocations: 1934)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=search):
+  
+app/controllers/users_controller.rb:111:in `set_user'
+Started POST "/users/search" for ::1 at 2019-12-26 14:36:39 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"5k5DqrGXG7wq+r2r6fWSMY/60Il6M+t3JXNz7rA+8GuCGCM2JcgWlLJGImaeEN9JCIvihXx3hEwq+QWwINuBzQ==", "name"=>"'; delete from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = ''; delete from users; --')[0m
+  ↳ app/controllers/users_controller.rb:49:in `search'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 1700)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ";": syntax error):
+  
+app/controllers/users_controller.rb:49:in `search'
+Started POST "/users/search" for ::1 at 2019-12-26 14:37:07 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"5k5DqrGXG7wq+r2r6fWSMY/60Il6M+t3JXNz7rA+8GuCGCM2JcgWlLJGImaeEN9JCIvihXx3hEwq+QWwINuBzQ==", "name"=>"'); delete from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = ''); delete from users; --')[0m
+  ↳ app/controllers/users_controller.rb:49:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 18.8ms | ActiveRecord: 1.1ms | Allocations: 6182)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 14:38:08 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"c464WcAuTFF24s9o6lofT/B9zf1VpFR3qngt9BsBwMUX2NjFVHFBee5eUKWdv1I3dwz/8VPgO0yl8luqi+SxYw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:49:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 14ms (ActiveRecord: 1.9ms | Allocations: 4523)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 14:38:08 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:111:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 4694)
+
+
+Started GET "/users" for ::1 at 2019-12-26 15:54:22 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 4797)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 15:54:30 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"830rrXDTpQ84XtNYxkLagnzy0KQQJA7CWOeO3Eujq0F+uigkwdyzeLG8+jMVi7b4c4QVG/6c60of2xUxU8Glww==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms | Allocations: 5020)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 15:54:30 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 4700)
+
+
+Started GET "/users" for ::1 at 2019-12-26 15:54:30 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 4604)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 15:54:33 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"HU/ZoBzJeDrffQPMC6v6WKdIx51E4JHtpFXlu22yxPWQiNoprcZuTVafKqfYYpYiqD4CIqpYdGXjaX5WddDKdw==", "name"=>"b", "commit"=>"送信"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'b')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1081)
+
+
+Started GET "/users/2" for ::1 at 2019-12-26 15:54:33 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 4575)
+
+
+Started GET "/users" for ::1 at 2019-12-26 15:54:34 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 4607)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 15:54:36 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"VDTD3UgMBEEj1u0Ykdbyh2DZGx0xuDPKK+xfBoFf3SPZ88BU+QMSNqo0xHNCH579b6/eot8A1kJs0MTrmT3ToQ==", "name"=>"c", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'c')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1078)
+
+
+Started GET "/users/3" for ::1 at 2019-12-26 15:54:36 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.3ms | Allocations: 4575)
+
+
+Started GET "/users" for ::1 at 2019-12-26 15:54:37 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 4603)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 15:54:39 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"nDN/wV0iniHSISq6A8Sqz1iC0gD1Nk/Wp2iKJI0EC5kR9HxI7C2IVlvDA9HQDca1V/QXvxuOql7gVBHJlWYFGw==", "name"=>"d", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'd')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 5190)
+
+
+Started GET "/users/search" for ::1 at 2019-12-26 15:54:43 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1178)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=search):
+  
+app/controllers/users_controller.rb:112:in `set_user'
+Started POST "/users/search" for ::1 at 2019-12-26 16:16:08 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"s+uqGhksCjtB2npkm2W+3q1ZaaKkmnqdSpLN/2NZwTnXvcqGjXMHE9lm5ansgPOmKihbrqLeFaZFGLuh87ywnw==", "name"=>"a", "commit"=>"送信"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'a')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 21ms (ActiveRecord: 0.7ms | Allocations: 1055)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 16:16:08 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 0.4ms | Allocations: 4596)
+
+
+Started GET "/users" for ::1 at 2019-12-26 16:16:22 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 4609)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 16:16:28 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"XIojfpAZ2koiAEDGm5BoUy7z6SzFbEM8HqWPvnksDRbRTSD3IRbMPaviaa1IWQQpIYUskyvUprRZmRRTYU4DlA==", "name"=>"b", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'b')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1080)
+
+
+Started GET "/users/2" for ::1 at 2019-12-26 16:16:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 86.5ms | ActiveRecord: 0.3ms | Allocations: 4576)
+
+
+Started GET "/users" for ::1 at 2019-12-26 16:16:32 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4605)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 16:16:34 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"91aQ2Ms0FrURa7k6QE6lbwdcSy2WtvbF59EINSGeGId6kZNRejsAwpiJkFGTh8kVCCqOkngOE02g7ZPYOfwWBQ==", "name"=>"d", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'd')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 5200)
+
+
+Started GET "/bundles/img/open-iconic-3cf97837524dd7445e9d1462e3c4afe2.woff" for ::1 at 2019-12-26 16:17:25 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bundles/img/open-iconic-3cf97837524dd7445e9d1462e3c4afe2.woff"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/bundles/img/open-iconic-93cc7aa654ae36b0828716f5ec3159cd.ttf" for ::1 at 2019-12-26 16:17:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bundles/img/open-iconic-93cc7aa654ae36b0828716f5ec3159cd.ttf"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/bundles/img/open-iconic-527eff645d8ead16666afb6931041279.otf" for ::1 at 2019-12-26 16:17:26 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bundles/img/open-iconic-527eff645d8ead16666afb6931041279.otf"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/search" for ::1 at 2019-12-26 16:17:44 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"KG1yMPppM+7Ox/HXRqB5tX7w2aKxkgJUDGG+iVdct2pMOxKsbjY+xlZ7bhoxRTTN+YHrrrfWbW8D68jXx7nGzA==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms | Allocations: 1074)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 16:17:44 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.2ms | Allocations: 4579)
+
+
+Started GET "/users" for ::1 at 2019-12-26 16:17:47 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 728)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 4605)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 16:17:51 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"jvf72AARlUaHfcXSTo4BaVNj3TAb6iqLyyrKSnq2pYIDMPhRsR6DMQ6f7LmdR20TXBUYj/VSzwOMFlGnYtSrAA==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = '' or '1'='1')[0m
+  ↳ app/controllers/users_controller.rb:50:in `search'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1100)
+
+
+Started GET "/users/1" for ::1 at 2019-12-26 16:17:51 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:112:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 4580)
+
+
+Started GET "/users" for ::1 at 2019-12-26 16:18:01 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 4606)
+
+
+Started GET "/users" for ::1 at 2019-12-26 16:21:23 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 4794)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 16:21:26 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"halN4t58qhO9+Am42LJ4PYAj/3WqGjBar1ddcOVt88/h/y1+SiOnOyVElnWvVzVFB1LNeaxeX2Gg3SsudYiCaQ==", "name"=>"' or '1'='1", "commit"=>"送信"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ?[0m  [["name", "' or '1'='1"]]
+  ↳ app/controllers/users_controller.rb:50:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 13.7ms | ActiveRecord: 1.7ms | Allocations: 6036)
+
+
+Started POST "/users/search" for ::1 at 2019-12-26 16:25:00 +0900
+Processing by UsersController#search as HTML
+  Parameters: {"authenticity_token"=>"jfknxQIOB/fXS5wNwqAo7yM3yIxUDA0PjsrnjPZZM27pr0dZllEK30/3A8C1RWWXpEb6gFJIYjSBQJHSZrxCyA==", "name"=>"  '); delele from users; --", "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ?[0m  [["name", "  '); delele from users; --"]]
+  ↳ app/controllers/users_controller.rb:50:in `search'
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 5195)
+
+
