@@ -11,5 +11,6 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
+          command: echo "Hello World!!"
           command: bundle -v
       - ruby/bundle-install
